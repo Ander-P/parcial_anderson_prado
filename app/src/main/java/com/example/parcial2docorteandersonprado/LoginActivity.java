@@ -34,16 +34,16 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
-        //sharedPreferences = getSharedPreferences(dataUser, modo_privado);
-        //editor = sharedPreferences.edit();
+        sharedPreferences = getSharedPreferences(dataUser, modo_privado);
+        editor = sharedPreferences.edit();
 
-        //dato = getApplicationContext().getSharedPreferences(dataUser, modo_privado).getString("usuario", "0");
+        dato = getApplicationContext().getSharedPreferences(dataUser, modo_privado).getString("usuario", "0");
 
-        //if (!dato.equalsIgnoreCase("0")){
-            //Intent i = new Intent(LoginActivity.this, Inicio.class);
-           // startActivity(i);
-            //finish();
-        //}
+        if (!dato.equalsIgnoreCase("0")){
+            Intent i = new Intent(LoginActivity.this, Inicio.class);
+            startActivity(i);
+            finish();
+        }
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +54,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (username.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                 } else {
-                    PreferencesHelper.saveUsername(LoginActivity.this, username);
+                    editor.putString("usuario", etUsername.getText().toString());
+                    editor.commit();
                     Intent intent = new Intent(LoginActivity.this, Inicio.class);
                     startActivity(intent);
                     finish();
