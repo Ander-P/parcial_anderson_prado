@@ -1,4 +1,5 @@
 package com.example.parcial2docorteandersonprado;
+
 import android.content.Context;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -8,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewClickListener implements RecyclerView.OnItemTouchListener {
-
     private OnItemClickListener mListener;
     private GestureDetector mGestureDetector;
 

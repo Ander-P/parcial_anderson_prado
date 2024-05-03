@@ -29,7 +29,7 @@ public class Inicio extends AppCompatActivity {
 
         String savedUsername = PreferencesHelper.getUsername(this);
 
-
+        //if (savedUsername != null) {
             setContentView(R.layout.activity_inicio);
             rcv_films = findViewById(R.id.rcv_films);
 
@@ -57,6 +57,9 @@ public class Inicio extends AppCompatActivity {
                 }
             }));
 
-
+        //} else {
+           // startActivity(new Intent(this, LoginActivity.class));
+           // finish();
+        //}
     }
 }
