@@ -24,23 +24,22 @@ public class Detail extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         TextView name = findViewById(R.id.txtViewNameFilm);
-        name.setText(getIntent().getStringExtra("name"));
+        name.setText("Nombre: " + getIntent().getStringExtra("name"));
 
         TextView status = findViewById(R.id.txtViewStatus);
-        status.setText(getIntent().getStringExtra("status"));
+        status.setText("Estado: " + getIntent().getStringExtra("status"));
 
         TextView gender = findViewById(R.id.txtViewGender);
-        gender.setText(getIntent().getStringExtra("gender"));
+        gender.setText("Genero: " +getIntent().getStringExtra("gender"));
 
         TextView city = findViewById(R.id.txtViewCity);
-        city.setText(getIntent().getStringExtra("city"));
+        city.setText("Ciudad: " + getIntent().getStringExtra("city"));
 
         TextView planet = findViewById(R.id.txtViewPlanet);
-        planet.setText(getIntent().getStringExtra("planet"));
+        planet.setText("Planeta: "+getIntent().getStringExtra("planet"));
 
         TextView specie = findViewById(R.id.txtViewSpecies);
-
-        specie.setText(getIntent().getStringExtra("specie"));
+        specie.setText("Especie: "+ getIntent().getStringExtra("specie"));
 
         ImageView image = findViewById(R.id.image_profile);
         String imageUrl = getIntent().getStringExtra("image");
