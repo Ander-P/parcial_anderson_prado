@@ -3,26 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="32dp">
+
 
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Usuario"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"/>
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:inputType="textPassword" />
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"/>
+
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar Sesión" />
+        android:text="Iniciar Sesión"
+        /> <!-- Color del texto del botón -->
 
 </LinearLayout>
