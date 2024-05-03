@@ -29,14 +29,14 @@ public class Inicio extends AppCompatActivity {
 
         String savedUsername = PreferencesHelper.getUsername(this);
 
-        //if (savedUsername != null) {
+        if (savedUsername != null) {
             setContentView(R.layout.activity_inicio);
             rcv_films = findViewById(R.id.rcv_films);
 
-            Film film1 = new Film("Rick sanchez", "Human", "https://rickandmortyapi.com/api/character/avatar/72.jpeg");
-            Film film2 = new Film("Morty Smith", "Human", "https://rickandmortyapi.com/api/character/avatar/120.jpeg");
-            Film film3 = new Film("Summer Smith", "Human", "https://rickandmortyapi.com/api/character/avatar/190.jpeg");
-            Film film4 = new Film("Bet Smith", "163 min", "https://rickandmortyapi.com/api/character/avatar/241.jpeg");
+            Film film1 = new Film("Rick sanchez", "Human", "https://rickandmortyapi.com/api/character/avatar/72.jpeg", "Alive", "Male", "Barr", "Colombia");
+            Film film2 = new Film("Morty Smith", "Human", "https://rickandmortyapi.com/api/character/avatar/120.jpeg", "Alive", "Male", "Bogota", "Colombia");
+            Film film3 = new Film("Summer Smith", "Human", "https://rickandmortyapi.com/api/character/avatar/190.jpeg", "Alive", "Male", "Cali", "Colombia");
+            Film film4 = new Film("Bet Smith", "Human", "https://rickandmortyapi.com/api/character/avatar/241.jpeg", "Alive", "Male", "Barr", "Colombia");
 
             Film[] films = {film1, film2, film3, film4};
 
@@ -53,13 +53,20 @@ public class Inicio extends AppCompatActivity {
                     Intent intent = new Intent(Inicio.this, Detail.class);
                     Film selectedFilm = listFilms.get(position);
                     intent.putExtra("name", selectedFilm.getName());
+                    intent.putExtra("specie", selectedFilm.getDuration());
+                    intent.putExtra("status", selectedFilm.getStatus());
+                    intent.putExtra("gender", selectedFilm.getGender());
+                    intent.putExtra("city", selectedFilm.getCity());
+                    intent.putExtra("planet", selectedFilm.getPlanet());
+                    intent.putExtra("image", selectedFilm.getImage());
                     startActivity(intent);
                 }
             }));
 
-        //} else {
-           // startActivity(new Intent(this, LoginActivity.class));
-           // finish();
-        //}
+        } else {
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
+
     }
 }

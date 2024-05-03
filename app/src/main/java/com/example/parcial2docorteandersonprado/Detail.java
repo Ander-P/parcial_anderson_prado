@@ -6,8 +6,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.squareup.picasso.Picasso;
 
 public class Detail extends AppCompatActivity {
     public static final String dataUser= "dataUser";
@@ -20,18 +23,31 @@ public class Detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        TextView textView = findViewById(R.id.txtViewNameFilm);
-        textView.setText(getIntent().getStringExtra("name"));
+        TextView name = findViewById(R.id.txtViewNameFilm);
+        name.setText(getIntent().getStringExtra("name"));
+
+        TextView status = findViewById(R.id.txtViewStatus);
+        status.setText(getIntent().getStringExtra("status"));
+
+        TextView gender = findViewById(R.id.txtViewGender);
+        gender.setText(getIntent().getStringExtra("gender"));
+
+        TextView city = findViewById(R.id.txtViewCity);
+        city.setText(getIntent().getStringExtra("city"));
+
+        TextView planet = findViewById(R.id.txtViewPlanet);
+        planet.setText(getIntent().getStringExtra("planet"));
+
+        TextView specie = findViewById(R.id.txtViewSpecies);
+
+        specie.setText(getIntent().getStringExtra("specie"));
+
+        ImageView image = findViewById(R.id.image_profile);
+        String imageUrl = getIntent().getStringExtra("image");
+        Picasso.get().load(imageUrl).into(image);
 
         btn_cerrar = findViewById(R.id.btn_cerrar);
 
-       // dato = getApplicationContext().getSharedPreferences(dataUser, modo_privado).getString("usuario", "0");
-
-        //if (!dato.equals("0")){
-            //txt_user.setText(dato);
-        //}else{
-           // txt_user.setText("No hay informacion");
-       // }
         btn_cerrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -3,14 +3,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Detail">
+
+    <ImageView
+        android:id="@+id/image_profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/txtViewNameFilm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtViewSpecies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Especie: Humano"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/txtViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado: Vivo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+    <TextView
+        android:id="@+id/txtViewGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Género: Masculino"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+    <TextView
+        android:id="@+id/txtViewCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ciudad: Ciudad de Rick"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+    <TextView
+        android:id="@+id/txtViewPlanet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planeta: Ciudad de Rick"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
 
     <Button
         android:id="@+id/btn_cerrar"
